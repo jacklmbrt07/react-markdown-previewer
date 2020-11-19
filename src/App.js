@@ -15,7 +15,6 @@ class App extends Component {
   };
   render() {
     let { markdown } = this.state;
-    console.log(markdown);
 
     return (
       <div className="App">
@@ -23,6 +22,7 @@ class App extends Component {
           <FormGroup controlid="formControlsTextarea">
             <FormLabel>Markdown Input</FormLabel>
             <FormControl
+            id="editor"
               as="textarea"
               rows={5}
               placeholder="Enter Markdown Text"
@@ -33,7 +33,7 @@ class App extends Component {
         </div>
         <div>
           <h1>Markdown Output</h1>
-          <div dangerouslySetInnerHTML={{ __html: marked(markdown) }}></div>
+          <div id="preview" dangerouslySetInnerHTML={{ __html: marked(markdown) }}></div>
         </div>
       </div>
     );
